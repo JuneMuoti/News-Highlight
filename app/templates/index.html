@@ -1,8 +1,10 @@
 <h1 align=center >GET THE BEST NEWS HIGHLIGHTS</h1>
 <body>
     <h3>GENERAL NEWS</h3>
-    {% for general_source in general %}
-        <li>{{general_source.description}}</li>
+    {% for top_headlines in trending %}
+        <li>{{top_headlines.author}}</li>
+        <img src="{{top_headlines.urlToImage}}" alt="image">
+        
     {%endfor%}
 
     </body>
