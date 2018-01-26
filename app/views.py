@@ -4,10 +4,12 @@ from .request import get_article
 
 @app.route('/')
 def index():
-    top_headlines = get_article('general')
-    print(top_headlines)
+    general_news = get_article('general')
+    business_news=get_article('business')
+    health_news=get_article('health')
+    
     title = 'Welcome to the best news Feed app ever'
-    return render_template('index.html',title=title,trending=top_headlines)
+    return render_template('index.html',title=title,general=general_news,business=business_news,health=health_news)
 
 @app.route('/news/<int:news_id>')
 def news(news_id):

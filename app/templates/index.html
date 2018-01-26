@@ -2,8 +2,10 @@
 <body>
     <h3>GENERAL NEWS</h3>
     {% for top_headlines in trending %}
-        <li>{{top_headlines.author}}</li>
+        <li>{{top_headlines.author}} </li>
         <img src="{{top_headlines.urlToImage}}" alt="image">
+        <li>{{top_headlines.description}}</li>
+       
         
     {%endfor%}
 
