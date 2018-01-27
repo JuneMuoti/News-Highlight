@@ -1,6 +1,7 @@
+{% extends 'base.html' %}
 {% import 'macros.html' as macro%}
 <!-- <h1 align=center >GET THE BEST NEWS HIGHLIGHTS</h1> -->
-<body>
+{% block content %}
     <h3>GENERAL NEWS</h3>
     <ul>
         {{macro.displayNewsList(general)}}
@@ -19,7 +20,7 @@
         </ul>
        </body> 
        
-        
+{% end block%}
     
 
 
