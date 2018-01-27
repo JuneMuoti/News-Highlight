@@ -1,12 +1,37 @@
 <h1 align=center >GET THE BEST NEWS HIGHLIGHTS</h1>
 <body>
     <h3>GENERAL NEWS</h3>
-    {% for top_headlines in trending %}
-        <li>{{top_headlines.author}} </li>
-        <img src="{{top_headlines.urlToImage}}" alt="image">
-        <li>{{top_headlines.description}}</li>
+    <ul>
+    {% for general_new in general %}
+        <li>{{general_new.author}} </li>
+        <img src="{{general_new.urlToImage}}" alt="image">
+        <li>{{general_new.description}}</li>
+        {%endfor%}
+        </ul>
+        
+        <h3>Business News</h3>
+        <ul>
+            {% for business_new in business %}
+                <li>{{business_new.author}} </li>
+                <img src="{{business_new.urlToImage}}" alt="image">
+                <li>{{business_new.description}}</li>
+            {%endfor%}
+           
+           
+        </ul>
+
+        <h3>Health News</h3>
+        <ul>
+            {% for health_new in health %}
+                <li>{{health_new.author}} </li>
+                <img src="{{health_new.urlToImage}}" alt="image">
+                <li>{{health_new.description}}</li>
+            {%endfor%}
+           
+        </ul>
        
         
-    {%endfor%}
+    
+
 
     </body>

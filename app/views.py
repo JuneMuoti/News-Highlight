@@ -5,6 +5,7 @@ from .request import get_article
 @app.route('/')
 def index():
     general_news = get_article('general')
+    # print(general_news)
     business_news=get_article('business')
     health_news=get_article('health')
     
