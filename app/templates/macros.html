@@ -1,0 +1,8 @@
+{% macro displayNewsList(article_list) %}
+    {% for article in article_list  %}
+        <li>{{article.author}} </li>
+        <img src="{{article.urlToImage}}" alt="image">
+        <li>{{article.description}}</li>
+        {%endfor%}
+
+{%endmacro %}
