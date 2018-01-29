@@ -4,6 +4,7 @@
 {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
 {% endblock %}
 {% block content %}
 
@@ -16,21 +17,17 @@
         {{macro.displayNewsList(general)}}
         </ul>
         <br>
-        <div class="container">
-            <div class="jumbotron">
+       
                 <h3>Business News</h3>
-            </div>
-        </div>
+            
         <ul>
             {{macro.displayNewsList(business)}}
            
         </ul>
         <br>
-        <div class="container">
-            <div class="jumbotron">
+       
                 <h3>Health News</h3>
-            </div>
-        </div>
+           
         <ul>
             {{macro.displayNewsList(health)}}
            
