@@ -39,7 +39,20 @@ def process_results(article_list):
 
 
     return article_results
+def get_source(id):
+    get_source_url =source_url.format(id,api_key)
+    with urllib.request.urlopen(get_source_url) as url:
+        get_source_data=url.reaD()
+        get_source_response = json.loads(get_source_data)
+
+        source_results = None
+        if get_source_response['sources']:
+            source_results_;list = get_source_response['sources']
+            source_results = process_results(source_results_list)
+    return source_results
     
+
+
 
 
 
