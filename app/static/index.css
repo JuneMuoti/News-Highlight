@@ -1,3 +1,14 @@
 html{
     font-family: 'Pompiere', cursive;
 }
+@import url('https://fonts.googleapis.com/css?family=Milonga');
+ 
+   h1 {
+        display: block;
+        font-family: 'Milonga', 'Trebuchet MS', Georgia, serif;
+        color: #595a6a;
+        font-size: 4.2em;
+        margin-bottom: 5px;
+        font-weight: normal;
+        text-align: center;
+      }
