@@ -4,10 +4,11 @@ from .models import article
 
 Article = article.Article
 api_key = app.config['NEWS_API_KEY']
-base_url =app.config["NEWS_API_BASE_URL"]
+base_url =app.config['NEWS_API_BASE_URL']
+source_url =app.config['SOURCES_API_BASE_URL']
 
-def get_article(general):
-    get_article_url = base_url.format(general,api_key)
+def get_article(category):
+    get_article_url = base_url.format(category,api_key)
 
     with urllib.request.urlopen(get_article_url) as url:
         get_article_data =url.read()
@@ -23,7 +24,8 @@ def get_article(general):
 def process_results(article_list):
     article_results =[]
     for article_item in article_list:
-        
+        id=article_item.get('id')
+        name= article_item.get('name')
         author = article_item.get('author')
         title =article_item.get('title')
         description = article_item.get('description')
@@ -37,6 +39,7 @@ def process_results(article_list):
 
 
     return article_results
+    
 
 
 
