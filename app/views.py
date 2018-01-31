@@ -9,7 +9,11 @@ def index():
     title = 'Welcome to the best news Feed app ever'
     return render_template('index.html',title=title,general=general_source,)
 
-@app.route('/news/<int:news_id>')
-def news(news_id):
+@app.route('/news/<id>')
+def news(id):
+    articles =get_article(id)
+    title= "Enjoy the news"
+    return render_template('news.html',articles=articles,title=title)
+    
     
     
