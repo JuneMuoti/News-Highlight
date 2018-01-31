@@ -2,13 +2,15 @@ from app import app
 import urllib.request,json
 from .models import article
 
-Article = article.Article
+Article = artic.Article
+Source=sources.Source
+
 api_key = app.config['NEWS_API_KEY']
 base_url =app.config['NEWS_API_BASE_URL']
 source_url =app.config['SOURCES_API_BASE_URL']
 
-def get_article(category):
-    get_article_url = base_url.format(category,api_key)
+def get_article(id):
+    get_article_url = base_url.format(id,api_key)
 
     with urllib.request.urlopen(get_article_url) as url:
         get_article_data =url.read()
@@ -21,11 +23,16 @@ def get_article(category):
             article_results = process_results(article_results_list)
 
     return article_results
-def process_results(article_list):
+def process_article(article_list):
     article_results =[]
+    source_dictionary ={}
     for article_item in article_list:
-        id=article_item.get('id')
-        name= article_item.get('name')
+        source_id=article_item['source']
+        source_dictionary['id']=source_id['id']
+        source_dictionary['name']=source_id['name']
+        id=source_dictionary['id']
+        name= source_dictionary['name']
+        print(name)
         author = article_item.get('author')
         title =article_item.get('title')
         description = article_item.get('description')
@@ -33,21 +40,21 @@ def process_results(article_list):
         urlToImage = article_item.get('urlToImage')
         publishedAt = article_item.get('publishedAt')
         
-        if url:
-            article_object = Article(author,title,description,url,urlToImage,publishedAt)
-            article_results.append(article_object)
+        if urlToImage:
+            source_object = Article(id,name,author,title,description,url,urlToImage,publishedAt)
+            article_results.append(source_object)
 
 
     return article_results
-def get_source(id):
-    get_source_url =source_url.format(id,api_key)
+def get_source(category):
+    get_source_url =source_url.format(category,api_key)
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data=url.reaD()
         get_source_response = json.loads(get_source_data)
 
         source_results = None
         if get_source_response['sources']:
-            source_results_;list = get_source_response['sources']
+            source_results_list = get_source_response['sources']
             source_results = process_results(source_results_list)
     return source_results
 
