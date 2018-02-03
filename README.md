@@ -1,78 +1,51 @@
-# News Feed App
+# News  Source App
 
-News Feed
+This is a basic application that allows users to select from a variety of news sources from different parts of the world .After selecting a particuar source,the user is taken to  a page that show the top headlines of the selected source.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Python3.6
 
 ```
-Give examples
+Flask
 ```
-
+Virtual environment
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Clone from my github
 
 ```
-until finished
+Install python 3.6 and flask in your local machine
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+run the command ./start.sh to run the app in your local machine
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
 
 ```
-Give an example
-```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Deplyment of the APp was done using Heroku
 
 ## Built With
 
 * python 3.6
 * Flask
 * CSS/Bootstsrap
+* Html
+* News API
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **June Muoti** - *Initial work* - [News Feed](https://github.com/PurpleBooth)
+* **June Muoti** - *Initial work* - [News Feed](https://mynews-feed-app.herokuapp.com/)
 
 
 ## License
@@ -80,6 +53,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 MIT
 ## Acknowledgments
 
-* Moringa school content
-* Pauline Karushi
-*
+* Sam Ngigi 
+* Latasha and Dennis
+
