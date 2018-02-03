@@ -1,14 +1,15 @@
 {% macro displayNewsList(source_list) %}
     {% for source in source_list  %}
     <style>
-            a:link, a:visited,li {
+            a:link, a:visited{
                 background-color: #36e7f4;
                 color: white;
-                padding:2px 5px;
-                /* margin: 10px; */
+                /* padding:6px 5px; */
+                margin: 5px;
                 text-align: center;
                 text-decoration: none;
                 display: inline-block;
+                font-size: 25px;
             }
             
             
@@ -17,7 +18,7 @@
             }
     </style>
     
-        <div class="col-xs-3 news-card">
+        <div class="col-xs-3 news-card" id="source">
             <a href="/news/{{source.id}}">
                  <li class="text-center">{{source.name}}</li>
             
@@ -30,17 +31,21 @@
         {% for item in article_list %}
         <style>
                 @import url('https://fonts.googleapis.com/css?family=Milonga');
-                 p{
+                a, p{
                         
                         font-family: 'Milonga', 'Trebuchet MS', Georgia, serif;
                         
                       }
+                a:hover, a:active {
+                background-color: rgb(255, 0, 200);
+            }
                       
                 </style>
             <div class="col-xs-3 news-card">
                 <p class="text-center"> </p>
                 <img src="{{item.urlToImage}}" alt="image" class="img-responsive"/>
                 <p>{{item.title}}</p>
+                <a href="{{item.url}}">click here to read more..</a>
           </div>
           {% endfor %}
         {% endmacro %}
