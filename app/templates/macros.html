@@ -1,15 +1,42 @@
 {% macro displayNewsList(source_list) %}
     {% for source in source_list  %}
+    <style>
+            a:link, a:visited,li {
+                background-color: #36e7f4;
+                color: white;
+                padding:2px 5px;
+                /* margin: 10px; */
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+            
+            
+            a:hover, a:active {
+                background-color: rgb(255, 0, 200);
+            }
+    </style>
+    
         <div class="col-xs-3 news-card">
             <a href="/news/{{source.id}}">
                  <li class="text-center">{{source.name}}</li>
             
-            </div>
+        </div>
+    
         
     {%endfor%}
     {% endmacro %}
     {%macro displayArticleList(article_list) %}
         {% for item in article_list %}
+        <style>
+                @import url('https://fonts.googleapis.com/css?family=Milonga');
+                 p{
+                        
+                        font-family: 'Milonga', 'Trebuchet MS', Georgia, serif;
+                        
+                      }
+                      
+                </style>
             <div class="col-xs-3 news-card">
                 <p class="text-center"> </p>
                 <img src="{{item.urlToImage}}" alt="image" class="img-responsive"/>

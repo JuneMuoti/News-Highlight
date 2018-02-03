@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Milonga');
 html{
     font-family: 'Pompiere', cursive;
 }
-@import url('https://fonts.googleapis.com/css?family=Milonga');
+
  
    h1 {
         display: block;
@@ -12,3 +13,6 @@ html{
         font-weight: normal;
         text-align: center;
       }
+body{
+    background-color: aqua;
+}
